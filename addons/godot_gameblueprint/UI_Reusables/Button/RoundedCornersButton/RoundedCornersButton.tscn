@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dypcmc41eaav6"]
+
+[ext_resource type="StyleBox" uid="uid://dsijt7y6rg6qw" path="res://addons/godot_gameblueprint/UI_Reusables/Button/RoundedCornersButton/RoundedCornersButton-Normal.tres" id="1_03r8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hho8k"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.336608, 0.336608, 0.336608, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo8yg"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.169245, 0.169245, 0.169245, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="CircularButton" type="Button"]
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_hho8k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wo8yg")
+theme_override_styles/normal = ExtResource("1_03r8w")
+text = "Jogar"

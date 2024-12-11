@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://0oe3frnlftli"]
+
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/GameConfig.gd" id="1_oqmnv"]
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/ControlConfig.gd" id="2_f612w"]
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig.gd" id="3_3e0aj"]
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/SoundConfig.gd" id="4_wnso0"]
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/MiscellaneousConfig.gd" id="5_b767g"]
+
+[node name="GameConfig" type="Node"]
+script = ExtResource("1_oqmnv")
+
+[node name="ControlConfig" type="Node" parent="."]
+script = ExtResource("2_f612w")
+
+[node name="VideoConfig" type="Node" parent="."]
+script = ExtResource("3_3e0aj")
+
+[node name="SoundConfig" type="Node" parent="."]
+script = ExtResource("4_wnso0")
+
+[node name="MiscellaneousConfig" type="Node" parent="."]
+script = ExtResource("5_b767g")

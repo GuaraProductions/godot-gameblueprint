@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhvk3moxtedn1"]
+
+[ext_resource type="LabelSettings" uid="uid://gxmlxyvf3dnm" path="res://addons/godot_gameblueprint/LabelSettings/Title.tres" id="1_73bfq"]
+[ext_resource type="PackedScene" uid="uid://dypcmc41eaav6" path="res://addons/godot_gameblueprint/UI_Reusables/Button/RoundedCornersButton/RoundedCornersButton.tscn" id="2_83v63"]
+
+[node name="MainMenu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 55
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Meu titulo legal"
+label_settings = ExtResource("1_73bfq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="CircularButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_83v63")]
+layout_mode = 2
+
+[node name="CircularButton2" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_83v63")]
+layout_mode = 2
+text = "Opcoes"
+
+[node name="CircularButton3" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_83v63")]
+layout_mode = 2
+text = "Sair"
