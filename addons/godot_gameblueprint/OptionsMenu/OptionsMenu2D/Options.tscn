@@ -26,43 +26,43 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 current_tab = 0
 script = ExtResource("1_nq8mq")
-tabs = Array[String](["Nova Aba 0", "Nova Aba 1", "Nova Aba 2", "Nova Aba 3"])
-margin_left = 15
-margin_right = 15
-margin_top = 15
-margin_bottom = 15
+tabs = Array[String](["Video", "Som", "Bindings", "Nova Aba 3"])
+margin_left = 25
+margin_right = 25
+margin_top = 25
+margin_bottom = 25
 
-[node name="Nova Aba 0" type="MarginContainer" parent="Margin/OptionsTabs"]
+[node name="Video" type="MarginContainer" parent="Margin/OptionsTabs"]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 0
 
-[node name="Nova Aba 1" type="MarginContainer" parent="Margin/OptionsTabs"]
+[node name="Som" type="MarginContainer" parent="Margin/OptionsTabs"]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 1
 
-[node name="Nova Aba 2" type="MarginContainer" parent="Margin/OptionsTabs"]
+[node name="Bindings" type="MarginContainer" parent="Margin/OptionsTabs"]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 2
 
 [node name="Nova Aba 3" type="MarginContainer" parent="Margin/OptionsTabs"]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 3
