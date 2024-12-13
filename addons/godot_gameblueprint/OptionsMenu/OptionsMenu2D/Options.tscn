@@ -40,6 +40,13 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 0
 
+[node name="Grid" type="GridContainer" parent="Margin/OptionsTabs/Video"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="Margin/OptionsTabs/Video/Grid"]
+layout_mode = 2
+
 [node name="Som" type="MarginContainer" parent="Margin/OptionsTabs"]
 visible = false
 layout_mode = 2
