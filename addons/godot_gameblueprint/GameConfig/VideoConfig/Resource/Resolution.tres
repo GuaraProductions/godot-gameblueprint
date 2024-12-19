@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResolutionConfig" load_steps=2 format=3 uid="uid://b1bw7rod8hasg"]
+
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/Config/ResolutionConfig.gd" id="1_etq5e"]
+
+[resource]
+script = ExtResource("1_etq5e")
+id = "resolution"
+name = "Resolucao"
+description = "RESOLUTION_DESCRIPTION"
+category = "Video"

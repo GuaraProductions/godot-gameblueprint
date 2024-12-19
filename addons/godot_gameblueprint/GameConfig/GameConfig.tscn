@@ -1,26 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://0oe3frnlftli"]
+[gd_scene load_steps=10 format=3 uid="uid://0oe3frnlftli"]
 
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/GameConfig.gd" id="1_oqmnv"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/BindingConfig/BindindConfig.gd" id="2_jk1nd"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/VideoConfig.gd" id="3_3e0aj"]
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/AbstractConfig.gd" id="4_veuxe"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/SoundConfig/SoundConfig.gd" id="4_wnso0"]
-[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/MiscellaneousConfig/MiscellaneousConfig.gd" id="5_b767g"]
+[ext_resource type="Resource" uid="uid://ca80ovwvtomoq" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/Resource/VSync.tres" id="5_8sk5u"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/LocalizationConfig/LocalizationConfig.gd" id="5_mv84s"]
+[ext_resource type="Resource" uid="uid://b1bw7rod8hasg" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/Resource/Resolution.tres" id="6_p5vqg"]
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/ScreenshotHandler/ScreenshotHandler.gd" id="7_vkdrh"]
 
 [node name="GameConfig" type="Node"]
 script = ExtResource("1_oqmnv")
 
-[node name="BindingConfig" type="Node" parent="."]
+[node name="BindingConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("2_jk1nd")
+configs = Array[ExtResource("4_veuxe")]([null])
+category_name = "Binding"
 
-[node name="VideoConfig" type="Node" parent="."]
+[node name="VideoConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("3_3e0aj")
+configs = Array[ExtResource("4_veuxe")]([ExtResource("5_8sk5u"), ExtResource("6_p5vqg")])
+category_name = "Video"
 
-[node name="SoundConfig" type="Node" parent="."]
+[node name="SoundConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("4_wnso0")
+category_name = "Sound"
 
-[node name="LocalizationConfig" type="Node" parent="."]
+[node name="LocalizationConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("5_mv84s")
+category_name = "Localization"
 
-[node name="MiscellaneousConfig" type="Node" parent="."]
-script = ExtResource("5_b767g")
+[node name="ScreenshotHandler" type="Node" parent="."]
+script = ExtResource("7_vkdrh")

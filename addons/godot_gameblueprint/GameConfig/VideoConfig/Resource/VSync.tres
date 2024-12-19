@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="VSyncConfig" load_steps=2 format=3 uid="uid://ca80ovwvtomoq"]
+
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/Config/VSyncConfig.gd" id="1_lofae"]
+
+[resource]
+script = ExtResource("1_lofae")
+id = "vsync"
+name = "Vsync"
+description = "VSYNC_DESCRIPTION"
+category = "Video"
