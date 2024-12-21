@@ -1,9 +1,13 @@
 extends Resource
 class_name AbstractConfig
 
+## O identificador da configuracao, usando para encontrar ela quando carregado do arquivo de configuracoes
 @export var id : String = "" 
+## O nome da configuracao
 @export var name : String = "" : get = _get_name
+## Descricao da configuracao
 @export_multiline var description : String = "" : get = _get_description
+## Categoria da configuracao, ajuda a identificar para onde essa configuracao sera usada
 @export var category : String = "Uncategorized"
 
 var value : Variant = null : get = _get_value, set = _set_value

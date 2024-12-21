@@ -15,20 +15,23 @@ script = ExtResource("1_oqmnv")
 
 [node name="BindingConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("2_jk1nd")
-configs = Array[ExtResource("4_veuxe")]([null])
+config_at_startup = null
 category_name = "Binding"
 
 [node name="VideoConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("3_3e0aj")
+config_at_startup = null
 configs = Array[ExtResource("4_veuxe")]([ExtResource("5_8sk5u"), ExtResource("6_p5vqg")])
 category_name = "Video"
 
 [node name="SoundConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("4_wnso0")
+config_at_startup = null
 category_name = "Sound"
 
 [node name="LocalizationConfig" type="Node" parent="." groups=["Config"]]
 script = ExtResource("5_mv84s")
+config_at_startup = null
 category_name = "Localization"
 
 [node name="ScreenshotHandler" type="Node" parent="."]

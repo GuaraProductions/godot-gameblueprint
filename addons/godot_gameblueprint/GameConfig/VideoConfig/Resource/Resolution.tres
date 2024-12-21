@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_etq5e")
+centralize_window = true
 id = "resolution"
 name = "Resolucao"
 description = "RESOLUTION_DESCRIPTION"
