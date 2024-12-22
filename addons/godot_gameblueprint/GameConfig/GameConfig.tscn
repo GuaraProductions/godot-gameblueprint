@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0oe3frnlftli"]
+[gd_scene load_steps=11 format=3 uid="uid://0oe3frnlftli"]
 
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/GameConfig.gd" id="1_oqmnv"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/BindingConfig/BindindConfig.gd" id="2_jk1nd"]
@@ -8,31 +8,24 @@
 [ext_resource type="Resource" uid="uid://ca80ovwvtomoq" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/Resource/VSync.tres" id="5_8sk5u"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/LocalizationConfig/LocalizationConfig.gd" id="5_mv84s"]
 [ext_resource type="Resource" uid="uid://b1bw7rod8hasg" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/Resource/Resolution.tres" id="6_p5vqg"]
+[ext_resource type="Resource" uid="uid://vx0dj3phyugn" path="res://addons/godot_gameblueprint/GameConfig/VideoConfig/Resource/Brightness.tres" id="7_jtmrn"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/GameConfig/ScreenshotHandler/ScreenshotHandler.gd" id="7_vkdrh"]
 
 [node name="GameConfig" type="Node"]
 script = ExtResource("1_oqmnv")
 
-[node name="BindingConfig" type="Node" parent="." groups=["Config"]]
+[node name="Binding" type="Node" parent="." groups=["Config"]]
 script = ExtResource("2_jk1nd")
-config_at_startup = null
-category_name = "Binding"
 
-[node name="VideoConfig" type="Node" parent="." groups=["Config"]]
+[node name="Video" type="Node" parent="." groups=["Config"]]
 script = ExtResource("3_3e0aj")
-config_at_startup = null
-configs = Array[ExtResource("4_veuxe")]([ExtResource("5_8sk5u"), ExtResource("6_p5vqg")])
-category_name = "Video"
+configs = Array[ExtResource("4_veuxe")]([ExtResource("5_8sk5u"), ExtResource("6_p5vqg"), ExtResource("7_jtmrn")])
 
-[node name="SoundConfig" type="Node" parent="." groups=["Config"]]
+[node name="Sound" type="Node" parent="." groups=["Config"]]
 script = ExtResource("4_wnso0")
-config_at_startup = null
-category_name = "Sound"
 
-[node name="LocalizationConfig" type="Node" parent="." groups=["Config"]]
+[node name="Localization" type="Node" parent="." groups=["Config"]]
 script = ExtResource("5_mv84s")
-config_at_startup = null
-category_name = "Localization"
 
 [node name="ScreenshotHandler" type="Node" parent="."]
 script = ExtResource("7_vkdrh")

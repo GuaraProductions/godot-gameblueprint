@@ -7,21 +7,17 @@ class_name AbstractConfig
 @export var name : String = "" : get = _get_name
 ## Descricao da configuracao
 @export_multiline var description : String = "" : get = _get_description
-## Categoria da configuracao, ajuda a identificar para onde essa configuracao sera usada
-@export var category : String = "Uncategorized"
 
 var value : Variant = null : get = _get_value, set = _set_value
 
 func _init(p_id: String = "",
 		   p_name: String = "", 
-		   p_description : String = "", 
-		   p_category : String = "") -> void:
+		   p_description : String = "") -> void:
 	
 	id = p_id
 	name = p_name
 	description = p_description
-	category = p_category
-	
+
 func _get_name() -> String:
 	return tr(name)
 	

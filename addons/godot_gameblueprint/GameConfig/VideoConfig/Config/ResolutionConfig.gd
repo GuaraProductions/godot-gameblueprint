@@ -1,4 +1,4 @@
-extends AbstractVideoConfig
+extends AbstractConfig
 class_name ResolutionConfig
 
 ## Se essa opcao for verdadeira, apos fazer o ajuste de resolucao, o jogo ira centralizar a janela, na tela onde a janela esta
@@ -6,11 +6,10 @@ class_name ResolutionConfig
 
 func _init(p_id: String = "",
 		   p_name: String = "", 
-		   p_description : String = "", 
-		   p_category : String = "",
+		   p_description : String = "",
 		   p_centralize_window: bool = true) -> void:
 	
-	super(p_id, p_name, p_description, p_category)
+	super(p_id, p_name, p_description)
 	centralize_window = p_centralize_window
 
 func is_valid(value: Variant) -> bool:

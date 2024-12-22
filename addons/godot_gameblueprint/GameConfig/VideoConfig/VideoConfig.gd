@@ -1,3 +1,2 @@
-@tool
-extends Config
+extends ConfigManager
 class_name VideoConfig
