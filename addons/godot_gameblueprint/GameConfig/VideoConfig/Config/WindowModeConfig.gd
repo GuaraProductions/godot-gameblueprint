@@ -1,8 +1,8 @@
 extends AbstractConfig
 class_name WindowModeConfig
 
-func is_valid(value: Variant) -> bool:
-	return value is int and value >= DisplayServer.WINDOW_MODE_WINDOWED and value <= DisplayServer.VSYNC_MAILBOX
+func is_valid(new_value: Variant) -> bool:
+	return new_value is int and new_value >= DisplayServer.WINDOW_MODE_WINDOWED and value <= DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
 
 func _default_value() -> Variant:
 	return DisplayServer.WINDOW_MODE_WINDOWED

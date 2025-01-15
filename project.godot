@@ -20,7 +20,7 @@ GameConfig="*res://addons/godot_gameblueprint/GameConfig/GameConfig.tscn"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 

@@ -1,6 +1,8 @@
 extends Resource
 class_name AbstractConfig
 
+signal applied(value)
+
 ## O identificador da configuracao, usando para encontrar ela quando carregado do arquivo de configuracoes
 @export var id : String = "" 
 ## O nome da configuracao
@@ -35,9 +37,30 @@ func _default_value() -> Variant:
 	return null
 	
 func is_valid(new_value: Variant) -> bool:
-	printerr("Not implemented!")
+	printerr("Config \"is_valid\" function not implemented!")
+	printerr("Config id: ", id)
+	printerr("Config name: ", name)
 	return false
 	
+func try_to_apply() -> bool:
+	
+	var value_applied : bool = apply()
+	
+	if value_applied:
+		applied.emit(value)
+		
+	return value_applied
+	
 func apply() -> bool:
-	printerr("Not implemented!")
+	printerr("Config \"apply\" function not implemented!")
+	printerr("Config id: ", id)
+	printerr("Config name: ", name)
 	return false
+	
+func to_json() -> Dictionary:
+	return {
+		"id" : id,
+		"name" : name,
+		"description" : description,
+		"value" : value
+	}

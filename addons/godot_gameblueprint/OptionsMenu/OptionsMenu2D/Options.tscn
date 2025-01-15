@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhr3gsciteabi"]
+[gd_scene load_steps=5 format=3 uid="uid://dhr3gsciteabi"]
 
+[ext_resource type="PackedScene" uid="uid://dypcmc41eaav6" path="res://addons/godot_gameblueprint/UI_Reusables/Button/RoundedCornersButton/RoundedCornersButton.tscn" id="1_i787u"]
+[ext_resource type="Script" path="res://addons/godot_gameblueprint/OptionsMenu/OptionsMenu2D/OptionsMenu.gd" id="1_k2nku"]
 [ext_resource type="Script" path="res://addons/godot_gameblueprint/OptionsMenu/OptionsMenu2D/OptionsTabs.gd" id="1_nq8mq"]
+[ext_resource type="PackedScene" uid="uid://dctmr3vmfocli" path="res://addons/godot_gameblueprint/GameConfig/Sync/FieldSync.tscn" id="3_pn3ev"]
 
 [node name="Options" type="ColorRect"]
 anchors_preset = 15
@@ -9,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.351257, 0.434102, 0.405522, 1)
+script = ExtResource("1_k2nku")
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -22,8 +26,12 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="OptionsTabs" type="TabContainer" parent="Margin"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
+
+[node name="OptionsTabs" type="TabContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 current_tab = 0
 script = ExtResource("1_nq8mq")
 tabs = Array[String](["Video", "Som", "Bindings", "Nova Aba 3"])
@@ -32,7 +40,7 @@ margin_right = 25
 margin_top = 25
 margin_bottom = 25
 
-[node name="Video" type="MarginContainer" parent="Margin/OptionsTabs"]
+[node name="Video" type="MarginContainer" parent="Margin/VBoxContainer/OptionsTabs"]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -40,14 +48,74 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 0
 
-[node name="Grid" type="GridContainer" parent="Margin/OptionsTabs/Video"]
+[node name="Grid" type="GridContainer" parent="Margin/VBoxContainer/OptionsTabs/Video"]
 layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="Label" type="Label" parent="Margin/OptionsTabs/Video/Grid"]
+[node name="MaxFPSLabel" type="Label" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Max FPS"
+
+[node name="MaxFPSSlider" type="HSlider" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Som" type="MarginContainer" parent="Margin/OptionsTabs"]
+[node name="WindowModeLabel" type="Label" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Window Mode"
+
+[node name="WindowModeField" type="OptionButton" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 1
+item_count = 5
+popup/item_0/text = "Windowed"
+popup/item_1/text = "Minimized"
+popup/item_1/id = 1
+popup/item_2/text = "Maximized"
+popup/item_2/id = 2
+popup/item_3/text = "Fullscreen"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "Exclusive Fullscreen"
+popup/item_4/id = 4
+
+[node name="FieldSync" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid/WindowModeField" instance=ExtResource("3_pn3ev")]
+property_name = "selected"
+config_manager_id = "Video"
+config_id = "window_mode"
+
+[node name="WindowResolutionLabel" type="Label" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Window Resolution"
+
+[node name="WindowResolutionField" type="OptionButton" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+text = "Vsync "
+
+[node name="VsyncField" type="CheckBox" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="FieldSync" parent="Margin/VBoxContainer/OptionsTabs/Video/Grid/VsyncField" instance=ExtResource("3_pn3ev")]
+property_name = "button_pressed"
+config_manager_id = "Video"
+config_id = "vsync"
+
+[node name="Som" type="MarginContainer" parent="Margin/VBoxContainer/OptionsTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
@@ -56,7 +124,7 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 1
 
-[node name="Bindings" type="MarginContainer" parent="Margin/OptionsTabs"]
+[node name="Bindings" type="MarginContainer" parent="Margin/VBoxContainer/OptionsTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
@@ -65,7 +133,7 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 2
 
-[node name="Nova Aba 3" type="MarginContainer" parent="Margin/OptionsTabs"]
+[node name="Nova Aba 3" type="MarginContainer" parent="Margin/VBoxContainer/OptionsTabs"]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
@@ -73,3 +141,26 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 metadata/_tab_index = 3
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 2
+
+[node name="Apply" parent="Margin/VBoxContainer/HBox" instance=ExtResource("1_i787u")]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Apply"
+
+[node name="GoBack" parent="Margin/VBoxContainer/HBox" instance=ExtResource("1_i787u")]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[connection signal="value_changed" from="Margin/VBoxContainer/OptionsTabs/Video/Grid/MaxFPSSlider" to="." method="_on_max_fps_slider_value_changed"]
+[connection signal="item_selected" from="Margin/VBoxContainer/OptionsTabs/Video/Grid/WindowModeField" to="." method="_on_window_mode_field_item_selected"]
+[connection signal="item_selected" from="Margin/VBoxContainer/OptionsTabs/Video/Grid/WindowResolutionField" to="." method="_on_window_resolution_field_item_selected"]
+[connection signal="toggled" from="Margin/VBoxContainer/OptionsTabs/Video/Grid/VsyncField" to="." method="_on_vsync_field_toggled"]
+[connection signal="pressed" from="Margin/VBoxContainer/HBox/Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="Margin/VBoxContainer/HBox/GoBack" to="." method="_on_go_back_pressed"]
