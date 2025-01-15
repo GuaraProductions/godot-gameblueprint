@@ -16,7 +16,7 @@ config/icon="res://ggb.png"
 
 [autoload]
 
-GameConfig="*res://addons/godot_gameblueprint/GameConfig/GameConfig.tscn"
+GameConfig="*res://addons/godot-simple-config/GameConfig/GameConfig.tscn"
 
 [display]
 
@@ -26,7 +26,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_gameblueprint/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-simple-config/plugin.cfg")
 
 [input]
 

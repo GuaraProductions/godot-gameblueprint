@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhvk3moxtedn1"]
 
-[ext_resource type="LabelSettings" uid="uid://gxmlxyvf3dnm" path="res://addons/godot_gameblueprint/LabelSettings/Title.tres" id="1_73bfq"]
-[ext_resource type="PackedScene" uid="uid://dypcmc41eaav6" path="res://addons/godot_gameblueprint/UI_Reusables/Button/RoundedCornersButton/RoundedCornersButton.tscn" id="2_83v63"]
+[ext_resource type="LabelSettings" uid="uid://gxmlxyvf3dnm" path="res://addons/godot-simple-config/LabelSettings/Title.tres" id="1_73bfq"]
+[ext_resource type="PackedScene" uid="uid://dypcmc41eaav6" path="res://addons/godot-simple-config/UI_Reusables/Button/RoundedCornersButton/RoundedCornersButton.tscn" id="2_83v63"]
 
 [node name="MainMenu" type="ColorRect"]
 anchors_preset = 15
